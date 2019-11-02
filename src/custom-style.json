@@ -6,15 +6,31 @@
                 "type": "FeatureCollection",
                 "features": []
             }
+        }, 
+        "neighborhoods": {
+            "type": "geojson",
+            "data": {
+                "type": "FeatureCollection",
+                "features": []
+            }
         }
+        
     },
 
     "layers": [{
         "id": "sites",
-        "type": "circle",
+        "type": "heatmap",
         "source": "sites",
         "paint": {
             "circle-color": "blue"
         }
-    }]
+    }, {
+        "id": "neighborhoods",
+        "type": "fill",
+        "source": "neighborhoods",
+        "paint": {
+            "fill-color": "rgba(94, 164, 198, 0.79)"
+        }
+    }
+    ]
 }

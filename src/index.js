@@ -9,6 +9,7 @@ let map;
 async function init() {
     
     const sites = await import("../data/sites.json");
+    const neighborhoods = await import("../data/neighborhoods.json");
 //waits for this to complete before next step
 
     const style = map.getStyle();
@@ -22,6 +23,7 @@ async function init() {
     map.setStyle(style);
 
     map.getSource("sites").setData(sites);
+    map.getSource("neighborhoods").setData(neighborhoods);
 
 // const sites imports from /data/sites.json 
 }

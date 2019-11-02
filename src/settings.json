@@ -1,5 +1,7 @@
 {
     "container": "map",
     "accessToken": "pk.eyJ1Ijoic3VhbmMiLCJhIjoiY2syaHN4MnJoMGRwbzNwbGlub3NlanUzaiJ9.W03BA2E-rspVZa0bBoFS-A",
-    "style": "mapbox://styles/suanc/ck2hvfwh02cpb1crxuh1whgb4"
+    "style": "mapbox://styles/suanc/ck2hvfwh02cpb1crxuh1whgb4",
+    "zoom": 6.48,
+    "center": [-117.745, 33.930]
 }
