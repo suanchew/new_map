@@ -29,7 +29,18 @@
         "type": "fill",
         "source": "neighborhoods",
         "paint": {
-            "fill-color": "rgba(94, 164, 198, 0.79)"
+            "fill-color": "rgba(94, 164, 198, 0.79)",
+            "fill-outline-color": "rgba(94, 164, 198, 0.79)"
+        }
+    },
+   {
+        "id": "neighborhoods-outline",
+        "type": "line",
+        "source": "neighborhoods",
+        "paint": {
+            
+            "line-color": "rgba(94, 164, 198)",
+            "line-width": 3
         }
     }
     ]
