@@ -1,0 +1,53 @@
+import "./styles.css";
+import "mapbox-gl/dist/mapbox-gl.css";
+// importing CSS files, since we are using webpack
+
+import * as mapboxgl from "mapbox-gl";
+// import mapbox-gl library
+
+import settings from "./settings.json";
+
+import custom from "./custom-style.json";
+// use to create custom sources layers according to mapbox studio style spec
+
+let map;
+// like var map but  
+// let is block scopes
+// var is function scope -> variable hoisting: javascript will put scope as function 
+// OR const
+// LET, VAR or CONST
+
+function init() {
+    const style = map.getStyle();
+// value cannot be re-assigned but can be transformed
+// example: myNum++ OK, myNum += 1 OK, nyNum = myNum + 1 NOT OK
+// example
+
+// style object is the style spec
+// spread syntax.
+    style.sources = {
+        ...style.sources, // what we created
+        ...custom.sources // what we define in custom-style.json
+    };
+    style.layers.push(...custom.layers); // push layers to our style object
+    map.setStyle(style);    // new style object
+}
+// sources are objects
+// refered to by key
+// layers are arrays
+// layers are ordered (so custom layers get pushed ontop of mapbox style)
+
+
+mapboxgl.accessToken = settings.accessToken;
+// so mapbox knows me
+
+map = new mapboxgl.Map(settings);
+// creates the map
+// https://docs.mapbox.com/mapbox-gl-js/example/simple-map/
+// settings passed into constructor
+
+map.on("load", init);
+// not user interaction 
+// informs the script that the map has been loaded/ready
+
+// actions: sources and layers -> map

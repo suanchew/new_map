@@ -6,15 +6,24 @@ import custom from "./custom-style.json";
 
 let map;
 
-function init() {
+async function init() {
+    
+    const sites = await import("../data/sites.json");
+//waits for this to complete before next step
+
     const style = map.getStyle();
 
+//use async call so no waiting for loads
     style.sources = {
         ...style.sources,
         ...custom.sources
     };
     style.layers.push(...custom.layers);
     map.setStyle(style);
+
+    map.getSource("sites").setData(sites);
+
+// const sites imports from /data/sites.json 
 }
 
 mapboxgl.accessToken = settings.accessToken;
