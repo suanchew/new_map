@@ -1,5 +1,5 @@
 {
     "container": "map",
-    "accessToken": "",
+    "accessToken": "https://suanchew.github.io/new_map/",
     "style": "mapbox://styles/mapbox/streets-v9"
 }
